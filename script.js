@@ -16,7 +16,7 @@ for (let i = 0; i < numberOfPoints; i++) {
     point.classList.add('circle');
     point.setAttribute('index', i);
     pointsContainer.appendChild(point);
-    addBorder();
+    changeColor();
 }
 
 const currentImg = document.querySelector('.image');
@@ -31,7 +31,7 @@ prevBtn.addEventListener('click', () =>{
         index = numberOfPoints-1;
         currentImg.src = imageContainer[index];
     }
-    addBorder();
+    changeColor();
 });
 
 nextBtn.addEventListener('click', () =>{
@@ -41,17 +41,17 @@ nextBtn.addEventListener('click', () =>{
         index = 0;
         currentImg.src = imageContainer[index];
     }
-    addBorder();
+    changeColor();
 });
 
 points.addEventListener('click', (e) =>{
     index = Number(e.target.getAttribute('index'))
     currentImg.src = imageContainer[index];
-    addBorder();
+    changeColor();
     
 });
 
-function addBorder() {
+function changeColor() {
     const pointsArray = Array.from(points.children);
     pointsArray.forEach(point =>{
 
